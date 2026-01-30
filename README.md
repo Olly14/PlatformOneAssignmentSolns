@@ -6,12 +6,12 @@ Prerequisites
   * .NET SDK(Latest Stable: .NET10)
   * Optional EF Coor Tools(Only needed if running migrations manually)
 
-Restore dependencies : dotnet restore.
+Restore dependencies: dotnet restore.
 
 Database setup
 This project uses SQLite via EF Core.
 
-Option A - Auto-create DB on startup.
+Option A: Auto-create the DB on startup.
 The Api will call EnsureCreated on startup and seed sample data if the DB is Empty.
 just run: dotnet run --project PlatformOne.Assets.Api.
 
@@ -35,7 +35,7 @@ Assets
   * PUT /api/assets/{symbol} -> Upserts an asset (create if missing, update if exists).
 
 Prices
-  * GET /api/prices?date=2026-01-29&source=Reuters&symbols=MSFT,AAPL -> Returns prices for one or more assets for a given date, optionally filtered by source. Response includes LastUpdatedUtc per row.
+  * GET /api/prices?date=2026-01-29&source=Reuters&symbols=MSFT, AAPL -> Returns prices for one or more assets for a given date, optionally filtered by source. Response includes LastUpdatedUtc per row.
   * PUT /api/prices -> Upserts a price for an asset + source + date.
 
 Design decisions
@@ -66,7 +66,7 @@ Timestamp rules
   * All timestamps are UTC to avoid time zone ambiguity.
 
 Assumptions
-  * Asset Symbol is treated as a stable identifier and is normalized to uppercase on write.
+  * Asset Symbol is treated as a stable identifier and is normalised to uppercase on write.
   * Source is identified by its Name (string). If a source does not exist during price upsert, the API can optionally auto-create it (simplifies ingestion scenarios).
   * Prices are stored as decimal values with no currency conversion logic (currency concerns are outside this exercise scope).
 
@@ -74,19 +74,19 @@ Tests
   * Unit/integration style tests use an in-memory SQLite database per test scope.
   * Tests validate:
       (1) price filtering by date/source/symbols.
-      (2) upsert creates new price when missing.
-      (3) upsert updates existing price and updates timestamp.
+      (2) upsert creates a new price when missing.
+      (3) upsert updates the existing price and updates the timestamp.
       (4) unknown asset produces a not-found style exception.
 
 Run tests: dotnet test
-## Test Projects
-  # PlatformOne.Assets.Api.Tests : Integration-style controller tests.
-  # PlatformOne.Assets.Shared.Tests : Service + business logic tests
+ *Test Projects
+    (a) PlatformOne.Assets.Api.Tests: Integration-style controller tests.
+    (b) PlatformOne.Assets.Shared.Tests: Service + business logic tests
 
-## Testing Strategy
+Testing Strategy
 The solution uses a layered testing approach:
-  # Service tests (Shared.Tests) -> Validate business logic in isolation using SQLite in-memory databases.
-  # Controller tests (Api.Tests)  -> Validate controller behavior by invoking controller actions directly with real services and DbContext, without hosting ASP.NET.
+  * Service tests (Shared.Tests) -> Validate business logic in isolation using SQLite in-memory databases.
+  * Controller tests (Api.Tests)  -> Validate controller behaviour by invoking controller actions directly with real services and DbContext, without hosting ASP.NET.
 This provides fast, reliable integration-style coverage without the overhead of full HTTP hosting.
   
 
