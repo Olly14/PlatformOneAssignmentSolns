@@ -1,5 +1,13 @@
 namespace PlatformOne.Assets.Api.Middlewares;
 
+/// <summary>
+/// Middleware that provides centralized exception handling for HTTP requests in an ASP.NET Core application.
+/// </summary>
+/// <remarks>ApiExceptionMiddleware intercepts exceptions thrown during request processing and translates them
+/// into appropriate HTTP responses with standardized error payloads. It handles common scenarios such as validation
+/// errors, missing resources, and database conflicts, logging each event and returning relevant status codes and error
+/// messages. This middleware should be registered in the application's request pipeline to ensure consistent error
+/// handling and logging across all endpoints.</remarks>
 public sealed class ApiExceptionMiddleware : IMiddleware
 {
     private static readonly JsonSerializerOptions JsonOptions = new()
