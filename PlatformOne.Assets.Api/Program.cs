@@ -7,7 +7,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // AutoMapper
-builder.Services.AddAutoMapper(cfg => cfg.LicenseKey = "<License Key Here>", typeof(EntitiesMapperProfile).Assembly);
+builder.Services.AddAutoMapper(cfg => cfg.LicenseKey = "<License Key Here>", typeof(EntitiesMapperProfile).Assembly); // no license key for now needed for AutoMapper Community Edition
 builder.Services.AddDbContext<AssetDbContext>(opt =>
 {
     // Default: local SQLite file for easy reviewer experience
