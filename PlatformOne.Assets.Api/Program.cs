@@ -39,11 +39,7 @@ app.UseMiddleware<ApiExceptionMiddleware>();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "PlatformOne Assets API v1");
-        c.RoutePrefix = "swagger"; // ensures it maps to /swagger/index.html
-    });
+    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
