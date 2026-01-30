@@ -1,0 +1,13 @@
+﻿global using AutoFixture;
+global using AutoFixture.AutoMoq;
+global using Moq;
+global using PlatformOne.Assets.Api.Controllers;
+global using PlatformOne.Assets.Shared.DtoModels;
+global using PlatformOne.Assets.Shared.Interfaces;
+global using PlatformOne.Assets.Api.tests.Fixtures;
+global using FluentAssertions;
+global using FluentAssertions.Execution;
+global using Microsoft.AspNetCore.Mvc;
+global using PlatformOne.Assets.Api.tests.Assertions;
+global using PlatformOne.Assets.Infrastructure.Entities;
+global using Microsoft.AspNetCore.Http;

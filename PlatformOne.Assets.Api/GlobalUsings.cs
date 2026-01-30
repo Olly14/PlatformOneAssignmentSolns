@@ -1,0 +1,11 @@
+﻿global using PlatformOne.Assets.Shared.DtoModels;
+global using PlatformOne.Assets.Shared.Exceptions;
+global using System.Text.Json;
+global using Microsoft.AspNetCore.Mvc;
+global using PlatformOne.Assets.Shared.Interfaces;
+global using Microsoft.EntityFrameworkCore;
+global using PlatformOne.Assets.Api.Middlewares;
+global using PlatformOne.Assets.Infrastructure.DataAccess;
+global using PlatformOne.Assets.Infrastructure.Seeders;
+global using PlatformOne.Assets.Shared.Profiles;
+global using PlatformOne.Assets.Shared.Services;

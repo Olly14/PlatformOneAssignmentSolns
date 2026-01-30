@@ -1,0 +1,16 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/Api/">
+    <Project Path="PlatformOne.Assets.Api/PlatformOne.Assets.Api.csproj" />
+  </Folder>
+  <Folder Name="/src/Infracstructure/">
+    <Project Path="PlatformOne.Assets.Infrastructure/PlatformOne.Assets.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Shared/">
+    <Project Path="PlatformOne.Assets.Shared/PlatformOne.Assets.Shared.csproj" />
+  </Folder>
+  <Folder Name="/src/Tests/">
+    <Project Path="PlatformOne.Assets.Api.tests/PlatformOne.Assets.Api.tests.csproj" />
+    <Project Path="PlatformOne.Assets.Shared.Tests/PlatformOne.Assets.Shared.Tests.csproj" />
+  </Folder>
+</Solution>

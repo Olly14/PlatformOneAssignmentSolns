@@ -1,0 +1,14 @@
+﻿global using Microsoft.Data.Sqlite;
+global using Microsoft.EntityFrameworkCore;
+global using PlatformOne.Assets.Infrastructure.DataAccess;
+global using FluentAssertions;
+global using Moq;
+global using PlatformOne.Assets.Infrastructure.Entities;
+global using PlatformOne.Assets.Shared.DtoModels;
+global using PlatformOne.Assets.Shared.Services;
+global using PlatformOne.Assets.Shared.Tests.Fixtures;
+global using PlatformOne.Assets.Shared.Tests.DbFactory;
+global using AutoFixture;
+global using AutoFixture.AutoMoq;
+global using AutoMapper;
+global using PlatformOne.Assets.Shared.Exceptions;
