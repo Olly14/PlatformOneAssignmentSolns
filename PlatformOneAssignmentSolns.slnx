@@ -1,4 +1,9 @@
 <Solution>
+  <Folder Name="/docs/" />
+  <Folder Name="/docs/Postman/">
+    <File Path="../../../OneDrive/Desktop/platformone-assets.postman_collection.json" />
+  </Folder>
+  <Folder Name="/Solution Items/" />
   <Folder Name="/src/" />
   <Folder Name="/src/Api/">
     <Project Path="PlatformOne.Assets.Api/PlatformOne.Assets.Api.csproj" />
